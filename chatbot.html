@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot - Sergiu Bătrîn</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+    <h1>Sergiu Bătrîn - Homework 2</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="chatbot.html">Chatbot</a></li>
+            <li><a href="card.html">Business Card</a><li>
+            <li><a href="CV.pdf">My Resume</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main-content">
+    <div class="chatbot-container">
+        <div class="chat-header">
+            <h2>Ask Me Anything</h2>
+            <p>Chat about my projects, skills, or experience</p>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-content">
+                    Hello! I'm Sergiu's chatbot. Ask me about my projects, skills, education, or contact info!
+                </div>
+            </div>
+        </div>
+        
+        <form id="chatForm" class="chat-form">
+            <input type="text" id="userInput" placeholder="Type your question here..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Sergiu Bătrîn</p>
+</footer>
+
+<script src="chatbot.js"></script>
+</body>
+</html>

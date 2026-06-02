@@ -1,0 +1,21 @@
+1. Specificity values:
+   - Rule 1 (div): (0,0,1)
+   - Rule 2 (.box): (0,1,0)
+   - Rule 3 (div#special): (1,0,1)
+   - Rule 4 (.container div): (0,1,1)
+   - Rule 5 (#unique.box): (1,1,0)
+
+2. Which color wins for each div:
+   - Div 1: red (only rule 1 applies)
+   - Div 2: blue (rule 2 has higher specificity than rule 1)
+   - Div 3: green (id selector wins over element selector)
+   - Div 4: yellow (rule 4 has class + element = (0,1,1) which beats rule 1's (0,0,1))
+   - Div 5: purple (id + class = (1,1,0) beats all others)
+
+3. Difference between selectors:
+   - Inline styles: (1,0,0,0) - highest specificity
+   - IDs: (1,0,0) - second highest
+   - Classes, attributes, pseudo-classes: (0,1,0) - third level
+   - Elements, pseudo-elements: (0,0,1) - lowest level
+
+4. When two rules have the same specificity, the last one declared in the CSS (the one that appears later) applies.

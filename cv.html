@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Sergiu Bătrîn</title>
+  <meta name="description" content="Curriculum Vitae of Sergiu Bătrîn, Computer Science student at West University of Timișoara.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --cream:      #faf3e0;
+      --white:      #ffffff;
+      --brown-dark: #3d2b1f;
+      --brown-mid:  #5c4b3a;
+      --brown-lite: #8B7355;
+      --tan:        #b8956e;
+      --tan-lite:   #e8d5b5;
+      --tan-bg:     #f5ede0;
+      --tan-pale:   #fef9f0;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans:  'DM Sans', Arial, sans-serif;
+      --shadow-md:  0 8px 24px rgba(61,43,31,.12);
+      --radius-md:  12px;
+      --radius-lg:  20px;
+      --transition: .25s ease;
+    }
+
+    /* Override base for cv page */
+    header h1 { font-family: var(--font-serif); }
+    nav a { font-family: var(--font-sans); font-size: .9rem; font-weight: 600; }
+    nav a:focus-visible { outline: 3px solid var(--tan); outline-offset: 3px; border-radius: 2px; }
+
+    .cv-wrap {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* ─ Sidebar ─ */
+    .cv-sidebar {
+      position: sticky;
+      top: 6rem;
+    }
+    .cv-profile-card {
+      background: var(--brown-mid);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      padding-bottom: 1.5rem;
+      animation: slideIn .5s ease both;
+    }
+    @keyframes slideIn {
+      from { opacity:0; transform: translateY(20px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+    .cv-photo-wrap {
+      background: linear-gradient(135deg, var(--tan) 0%, #8B5E3C 100%);
+      padding: 2rem 2rem 1rem;
+    }
+    .cv-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,.35);
+      object-fit: cover;
+      object-position: center top;
+      margin: 0 auto;
+      display: block;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    .cv-name {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--white);
+      margin: 1rem 1rem .25rem;
+      line-height: 1.3;
+    }
+    .cv-role {
+      font-family: var(--font-sans);
+      font-size: .82rem;
+      color: rgba(255,255,255,.65);
+      margin: 0 1rem 1.5rem;
+    }
+    .cv-contact-list {
+      list-style: none;
+      padding: 0 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .cv-contact-list li {
+      font-family: var(--font-sans);
+      font-size: .8rem;
+      color: rgba(255,255,255,.8);
+      padding: .4rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      word-break: break-all;
+    }
+    .cv-contact-list li:last-child { border-bottom: none; }
+    .cv-dl-btn {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-size: .82rem;
+      font-weight: 600;
+      padding: .55rem 1.25rem;
+      text-decoration: none;
+      transition: background var(--transition);
+      margin-top: .5rem;
+    }
+    .cv-dl-btn:hover { background: rgba(255,255,255,.25); }
+    .cv-dl-btn:focus-visible { outline: 3px solid var(--tan); outline-offset: 3px; border-radius: 8px; }
+
+    /* ─ Main content ─ */
+    .cv-main { min-width: 0; }
+
+    .cv-section {
+      background: var(--white);
+      border: 1px solid var(--tan-lite);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(61,43,31,.07);
+      animation: slideIn .5s ease both;
+    }
+    .cv-section:nth-child(1) { animation-delay: .05s; }
+    .cv-section:nth-child(2) { animation-delay: .1s; }
+    .cv-section:nth-child(3) { animation-delay: .15s; }
+    .cv-section:nth-child(4) { animation-delay: .2s; }
+    .cv-section:nth-child(5) { animation-delay: .25s; }
+
+    .cv-section-title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--brown-mid);
+      padding-bottom: .6rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 2px solid var(--tan-lite);
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    .cv-section-title span { font-size: 1.15rem; }
+
+    /* Timeline items */
+    .cv-timeline { display: flex; flex-direction: column; gap: 1.25rem; }
+    .cv-item { display: flex; gap: 1rem; }
+    .cv-item-dot {
+      flex-shrink: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--tan);
+      margin-top: .55rem;
+      position: relative;
+    }
+    .cv-item-dot::after {
+      content: '';
+      position: absolute;
+      top: 10px; left: 4px;
+      width: 2px;
+      height: calc(100% + 15px);
+      background: var(--tan-lite);
+    }
+    .cv-timeline > .cv-item:last-child .cv-item-dot::after { display: none; }
+    .cv-item-body { flex: 1; min-width: 0; }
+    .cv-item-title {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: .95rem;
+      color: var(--brown-dark);
+      margin-bottom: .15rem;
+    }
+    .cv-item-subtitle {
+      font-family: var(--font-sans);
+      font-size: .83rem;
+      color: var(--tan);
+      font-weight: 600;
+      margin-bottom: .25rem;
+    }
+    .cv-item-meta {
+      font-family: var(--font-sans);
+      font-size: .78rem;
+      color: var(--brown-lite);
+      margin-bottom: .4rem;
+    }
+    .cv-item-desc {
+      font-family: var(--font-sans);
+      font-size: .85rem;
+      color: #5c5040;
+      line-height: 1.55;
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: .75rem;
+    }
+    .skill-item {
+      background: var(--tan-pale);
+      border: 1px solid var(--tan-lite);
+      border-radius: 8px;
+      padding: .6rem .85rem;
+      font-family: var(--font-sans);
+      font-size: .83rem;
+      font-weight: 600;
+      color: var(--brown-mid);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .skill-item:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(61,43,31,.1); }
+
+    /* Interests */
+    .interests-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+    }
+    .interest-tag {
+      background: var(--tan-bg);
+      border: 1px solid var(--tan-lite);
+      border-radius: 50px;
+      padding: .35rem 1rem;
+      font-family: var(--font-sans);
+      font-size: .83rem;
+      color: var(--brown-mid);
+    }
+
+    /* Responsive */
+    @media (max-width: 750px) {
+      .cv-wrap { grid-template-columns: 1fr; }
+      .cv-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <h1>Sergiu Bătrîn — Homework 3</h1>
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="overview.html">Overview</a></li>
+      <li><a href="chatbot.html">Chatbot</a></li>
+      <li><a href="card.html">Business Card</a></li>
+      <li><a href="cv.html" aria-current="page">CV</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="CV.pdf">Resume (PDF)</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <div class="cv-wrap">
+
+    <!-- Sidebar -->
+    <aside class="cv-sidebar" aria-label="Profile and contact">
+      <div class="cv-profile-card">
+        <div class="cv-photo-wrap">
+          <img src="serj.jpg" alt="Sergiu Bătrîn" class="cv-photo" width="110" height="110" loading="eager">
+        </div>
+        <p class="cv-name">Sergiu-George Bătrîn</p>
+        <p class="cv-role">Computer Science Student</p>
+        <ul class="cv-contact-list" aria-label="Contact details">
+          <li><span aria-hidden="true">📧</span> sergiu.batrin05@e-uvt.ro</li>
+          <li><span aria-hidden="true">🐙</span> github.com/OldSerj</li>
+          <li><span aria-hidden="true">📍</span> Timișoara, Romania</li>
+          <li><span aria-hidden="true">🎓</span> West University of Timișoara</li>
+        </ul>
+        <a href="CV.pdf" class="cv-dl-btn" download aria-label="Download CV as PDF">⬇ Download PDF</a>
+      </div>
+    </aside>
+
+    <!-- Main CV content -->
+    <div class="cv-main" role="region" aria-label="Curriculum Vitae">
+
+      <!-- Education -->
+      <section class="cv-section" aria-labelledby="cv-edu">
+        <h2 id="cv-edu" class="cv-section-title"><span aria-hidden="true">🎓</span> Education</h2>
+        <div class="cv-timeline">
+          <div class="cv-item">
+            <div class="cv-item-dot" aria-hidden="true"></div>
+            <div class="cv-item-body">
+              <p class="cv-item-title">B.Sc. Computer Science (English)</p>
+              <p class="cv-item-subtitle">West University of Timișoara</p>
+              <p class="cv-item-meta">2025 — present · Timișoara, Romania</p>
+              <p class="cv-item-desc">First-year undergraduate focused on algorithms, data structures, web technologies, and software engineering principles.</p>
+            </div>
+          </div>
+          <div class="cv-item">
+            <div class="cv-item-dot" aria-hidden="true"></div>
+            <div class="cv-item-body">
+              <p class="cv-item-title">Mate-Info Profile (Baccalaureate)</p>
+              <p class="cv-item-subtitle">Colegiul Național Preparandia Dimitrie Tichindeal Arad</p>
+              <p class="cv-item-meta">2021 — 2025 · Arad, Romania</p>
+              <p class="cv-item-desc">Mathematics and Informatics specialisation. Graduated with focus on programming fundamentals, discrete mathematics, and algorithms.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience / Projects -->
+      <section class="cv-section" aria-labelledby="cv-exp">
+        <h2 id="cv-exp" class="cv-section-title"><span aria-hidden="true">💼</span> Projects &amp; Experience</h2>
+        <div class="cv-timeline">
+          <div class="cv-item">
+            <div class="cv-item-dot" aria-hidden="true"></div>
+            <div class="cv-item-body">
+              <p class="cv-item-title">URL Shortener</p>
+              <p class="cv-item-subtitle">Personal Project</p>
+              <p class="cv-item-meta">2024 · Python, Flask, HTML/CSS</p>
+              <p class="cv-item-desc">Local web server that shortens URLs, tracks analytics, and features a frontend with dark mode support.</p>
+            </div>
+          </div>
+          <div class="cv-item">
+            <div class="cv-item-dot" aria-hidden="true"></div>
+            <div class="cv-item-body">
+              <p class="cv-item-title">Curl Card</p>
+              <p class="cv-item-subtitle">Personal Project</p>
+              <p class="cv-item-meta">2024 · Python, HTTP</p>
+              <p class="cv-item-desc">Server that fetches and renders rich link-preview data from any URL, similar to Open Graph cards.</p>
+            </div>
+          </div>
+          <div class="cv-item">
+            <div class="cv-item-dot" aria-hidden="true"></div>
+            <div class="cv-item-body">
+              <p class="cv-item-title">Prev.md</p>
+              <p class="cv-item-subtitle">Personal Project</p>
+              <p class="cv-item-meta">2024 · JavaScript, HTML/CSS</p>
+              <p class="cv-item-desc">Minimal real-time Markdown preview web application with clean, distraction-free interface.</p>
+            </div>
+          </div>
+          <div class="cv-item">
+            <div class="cv-item-dot" aria-hidden="true"></div>
+            <div class="cv-item-body">
+              <p class="cv-item-title">Video Editor — High School YouTube Channel</p>
+              <p class="cv-item-subtitle">Colegiul Preparandia</p>
+              <p class="cv-item-meta">2022 — 2025 · DaVinci Resolve, Canva</p>
+              <p class="cv-item-desc">Edited and produced video content for the school's official YouTube channel, handling colour grading, motion graphics, and exports.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="cv-section" aria-labelledby="cv-skills">
+        <h2 id="cv-skills" class="cv-section-title"><span aria-hidden="true">⚙️</span> Skills</h2>
+        <div class="skills-grid" role="list">
+          <div class="skill-item" role="listitem"><span aria-hidden="true">🌐</span> HTML5</div>
+          <div class="skill-item" role="listitem"><span aria-hidden="true">🎨</span> CSS3</div>
+          <div class="skill-item" role="listitem"><span aria-hidden="true">⚡</span> JavaScript</div>
+          <div class="skill-item" role="listitem"><span aria-hidden="true">🐍</span> Python</div>
+          <div class="skill-item" role="listitem"><span aria-hidden="true">🔧</span> Git &amp; GitHub</div>
+          <div class="skill-item" role="listitem"><span aria-hidden="true">🗄️</span> SQL (basics)</div>
+          <div class="skill-item" role="listitem"><span aria-hidden="true">🛡️</span> Cybersecurity</div>
+          <div class="skill-item" role="listitem"><span aria-hidden="true">🎬</span> DaVinci Resolve</div>
+        </div>
+      </section>
+
+      <!-- Certifications / Activities -->
+      <section class="cv-section" aria-labelledby="cv-cert">
+        <h2 id="cv-cert" class="cv-section-title"><span aria-hidden="true">🏆</span> Activities</h2>
+        <div class="cv-timeline">
+          <div class="cv-item">
+            <div class="cv-item-dot" aria-hidden="true"></div>
+            <div class="cv-item-body">
+              <p class="cv-item-title">CTF Competitions</p>
+              <p class="cv-item-subtitle">Capture The Flag · Cybersecurity</p>
+              <p class="cv-item-meta">2023 — present</p>
+              <p class="cv-item-desc">Participated in multiple CTF competitions, focusing on web exploitation, reverse engineering, and OSINT challenges.</p>
+            </div>
+          </div>
+          <div class="cv-item">
+            <div class="cv-item-dot" aria-hidden="true"></div>
+            <div class="cv-item-body">
+              <p class="cv-item-title">Penetration Testing — Self-Study</p>
+              <p class="cv-item-subtitle">Virtual Machines, Kali Linux</p>
+              <p class="cv-item-meta">2023 — present</p>
+              <p class="cv-item-desc">Hands-on experimentation with virtualised lab environments for learning ethical hacking techniques.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interests -->
+      <section class="cv-section" aria-labelledby="cv-interests">
+        <h2 id="cv-interests" class="cv-section-title"><span aria-hidden="true">✨</span> Interests</h2>
+        <ul class="interests-list" aria-label="Personal interests">
+          <li class="interest-tag">Full-Stack Development</li>
+          <li class="interest-tag">Cybersecurity</li>
+          <li class="interest-tag">Open Source</li>
+          <li class="interest-tag">Video Production</li>
+          <li class="interest-tag">CLI Tools</li>
+          <li class="interest-tag">Performance Optimisation</li>
+          <li class="interest-tag">Linux</li>
+          <li class="interest-tag">Minimalist Design</li>
+        </ul>
+      </section>
+
+    </div><!-- /cv-main -->
+  </div><!-- /cv-wrap -->
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Sergiu Bătrîn</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview - Sergiu Bătrîn</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Internal CSS for overview page only */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        /* Profile header using Flexbox */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #e8d5b5;
+        }
+        
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            background: #b8956e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .profile-info h2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-info p {
+            color: #6b5740;
+        }
+        
+        /* Skills section - Flexbox */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-tag {
+            background: #f5ede0;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            color: #5c4b3a;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            border: 1px solid #e8d5b5;
+        }
+        
+        /* Projects section - Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #e8d5b5;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        /* Different styling for the third card (demonstrates one card styled differently) */
+        .project-card:nth-child(3) {
+            background: #f5ede0;
+            border-left: 4px solid #b8956e;
+        }
+        
+        .project-card h3 {
+            color: #5c4b3a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-card p {
+            color: #6b5740;
+            font-size: 0.9rem;
+        }
+        
+        .project-card .card-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #b8956e;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* Contact section - Flexbox */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            justify-content: space-between;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #5c4b3a;
+        }
+        
+        /* Media query for larger screens */
+        @media (min-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: 
+                    "profile profile"
+                    "skills projects"
+                    "contact contact";
+            }
+            
+            .profile-header {
+                grid-area: profile;
+            }
+            
+            .skills-section {
+                grid-area: skills;
+            }
+            
+            .projects-section {
+                grid-area: projects;
+            }
+            
+            .contact-section {
+                grid-area: contact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+    <h1>Sergiu Bătrîn - Homework 2</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="chatbot.html">Chatbot</a></li>
+            <li><a href="card.html">Business Card</a><li>
+            <li><a href="CV.pdf">My Resume</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main-content">
+    <h2>Profile Overview</h2>
+    
+    <div class="overview-grid">
+        <!-- Profile Section - uses Flexbox -->
+        <div class="profile-header">
+            <div class="profile-avatar">SB</div>
+            <div class="profile-info">
+                <h2>Sergiu-George Bătrîn</h2>
+                <p>Computer Science student at West University of Timișoara, passionate about full-stack development and cybersecurity.</p>
+            </div>
+        </div>
+        
+        <!-- Skills Section - uses Flexbox -->
+        <div class="skills-section">
+            <h3>Skills</h3>
+            <div class="skills-container">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">DaVinci Resolve</span>
+            </div>
+        </div>
+        
+        <!-- Projects Section - Card grid with 4+ cards -->
+        <div class="projects-section">
+            <h3>Featured Projects</h3>
+            <div class="cards-grid">
+                <div class="project-card">
+                    <h3>URL Shortener</h3>
+                    <p>Local web server that shortens URLs and tracks analytics.</p>
+                    <a href="#" class="card-link">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Curl Card</h3>
+                    <p>Server that fetches rich preview data from URLs.</p>
+                    <a href="#" class="card-link">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Prev.md</h3>
+                    <p>Minimal markdown preview web app.</p>
+                    <a href="#" class="card-link">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Atestat</h3>
+                    <p>Website with MBTI Personality Test and IQ approximator.</p>
+                    <a href="#" class="card-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Section - uses Flexbox -->
+        <div class="contact-section">
+            <h3>Contact</h3>
+            <div class="contact-info">
+                <div class="contact-item">📧 sergiu.batrin@example.com</div>
+                <div class="contact-item">🐙 github.com/OldSerj</div>
+                <div class="contact-item">📍 Timișoara, Romania</div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Sergiu Bătrîn</p>
+</footer>
+
+</body>
+</html>

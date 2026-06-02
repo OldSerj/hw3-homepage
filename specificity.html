@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity Game</title>
+    <style>
+        div {
+            background-color: red;
+        }
+
+        .box {
+            background-color: blue;
+        }
+
+        div#special {
+            background-color: green;
+        }
+
+        .container div {
+            background-color: yellow;
+        }
+
+        /* Rule 5 */
+        #unique.box {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div>Div 1 (plain div)</div>
+    <div class="box">Div 2 (class .box)</div>
+    <div id="special">Div 3 (id #special)</div>
+    <div class="container">
+        <div>Div 4 (inside .container)</div>
+    </div>
+    <div id="unique" class="box">Div 5 (id #unique + class .box)</div>
+</body>
+</html>
