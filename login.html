@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Sergiu Bătrîn</title>
     <style>
-        /* Embedded CSS - Internal Styles */
         
         * {
             margin: 0;
@@ -21,7 +20,6 @@
             flex-direction: column;
         }
         
-        /* Header */
         header {
             background: #5c4b3a;
             color: white;
@@ -34,7 +32,6 @@
             font-weight: normal;
         }
         
-        /* Navigation */
         nav ul {
             display: flex;
             gap: 1.5rem;
@@ -54,7 +51,6 @@
             color: #e8c9a0;
         }
         
-        /* Main content */
         main {
             flex: 1;
             display: flex;
@@ -63,7 +59,6 @@
             padding: 2rem;
         }
         
-        /* Login Container - Two Panel Layout */
         .login-container {
             display: flex;
             max-width: 1000px;
@@ -75,7 +70,6 @@
             border: 1px solid #e8d5b5;
         }
         
-        /* Left Panel - Branding Side */
         .login-brand {
             flex: 1;
             background: #f5ede0;
@@ -105,7 +99,6 @@
             margin-bottom: 1rem;
         }
         
-        /* Right Panel - Form Side */
         .login-form {
             flex: 1;
             padding: 3rem;
@@ -125,7 +118,6 @@
             font-size: 0.9rem;
         }
         
-        /* Form Elements */
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -155,7 +147,6 @@
             box-shadow: 0 0 0 3px rgba(184, 149, 110, 0.2);
         }
         
-        /* Checkbox row */
         .checkbox-group {
             display: flex;
             align-items: center;
@@ -172,7 +163,6 @@
             font-weight: normal;
         }
         
-        /* Buttons - Reusable component style */
         .btn {
             width: 100%;
             padding: 0.75rem;
@@ -205,7 +195,6 @@
             background: #f5ede0;
         }
         
-        /* Links */
         .forgot-link {
             display: block;
             text-align: right;
@@ -237,7 +226,6 @@
             text-decoration: underline;
         }
         
-        /* Footer */
         footer {
             background: #5c4b3a;
             color: #f5e6d3;
@@ -246,7 +234,6 @@
             font-family: Arial, sans-serif;
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .login-container {
                 flex-direction: column;
@@ -276,21 +263,22 @@
     <h1>Sergiu Bătrîn - Homework 2</h1>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="overview.html">Overview</a></li>
-            <li><a href="chatbot.html">Chatbot</a></li>
-            <li><a href="card.html">Business Card</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="overview.html">Overview</a></li>
+      <li><a href="chatbot.html">Chatbot</a></li>
+      <li><a href="card.html">Business Card</a></li>
+      <li><a href="cv.html" aria-current="page">CV</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="CV.pdf">Resume (PDF)</a></li>
+    </ul>
     </nav>
 </header>
 
 <main id="main-content">
     <div class="login-container">
-        <!-- Left Panel - Branding -->
         <div class="login-brand">
             <div class="brand-icon">👨‍💻</div>
             <h2>Sergiu Bătrîn</h2>
@@ -298,7 +286,6 @@
             <p style="font-size: 0.85rem;">Full-stack development | Cybersecurity | Problem Solving</p>
         </div>
         
-        <!-- Right Panel - Login Form -->
         <div class="login-form">
             <h3>Welcome Back</h3>
             <p>Sign in to access your dashboard</p>
@@ -336,7 +323,6 @@
 </footer>
 
 <script>
-    // Embedded JavaScript for form handling
     document.getElementById('loginForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -348,7 +334,6 @@
         
         if (email && password) {
             alert(`Welcome back, ${email.split('@')[0]}! (Demo mode - no actual login)`);
-            // In a real app, you would redirect or authenticate here
         } else {
             alert('Please fill in both email and password.');
         }

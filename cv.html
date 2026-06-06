@@ -28,7 +28,6 @@
       --transition: .25s ease;
     }
 
-    /* Override base for cv page */
     header h1 { font-family: var(--font-serif); }
     nav a { font-family: var(--font-sans); font-size: .9rem; font-weight: 600; }
     nav a:focus-visible { outline: 3px solid var(--tan); outline-offset: 3px; border-radius: 2px; }
@@ -40,7 +39,6 @@
       align-items: start;
     }
 
-    /* ─ Sidebar ─ */
     .cv-sidebar {
       position: sticky;
       top: 6rem;
@@ -121,7 +119,6 @@
     .cv-dl-btn:hover { background: rgba(255,255,255,.25); }
     .cv-dl-btn:focus-visible { outline: 3px solid var(--tan); outline-offset: 3px; border-radius: 8px; }
 
-    /* ─ Main content ─ */
     .cv-main { min-width: 0; }
 
     .cv-section {
@@ -153,7 +150,6 @@
     }
     .cv-section-title span { font-size: 1.15rem; }
 
-    /* Timeline items */
     .cv-timeline { display: flex; flex-direction: column; gap: 1.25rem; }
     .cv-item { display: flex; gap: 1rem; }
     .cv-item-dot {
@@ -202,7 +198,6 @@
       line-height: 1.55;
     }
 
-    /* Skills grid */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -224,7 +219,6 @@
     }
     .skill-item:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(61,43,31,.1); }
 
-    /* Interests */
     .interests-list {
       display: flex;
       flex-wrap: wrap;
@@ -240,7 +234,6 @@
       color: var(--brown-mid);
     }
 
-    /* Responsive */
     @media (max-width: 750px) {
       .cv-wrap { grid-template-columns: 1fr; }
       .cv-sidebar { position: static; }
@@ -273,7 +266,6 @@
 
   <div class="cv-wrap">
 
-    <!-- Sidebar -->
     <aside class="cv-sidebar" aria-label="Profile and contact">
       <div class="cv-profile-card">
         <div class="cv-photo-wrap">
@@ -291,10 +283,8 @@
       </div>
     </aside>
 
-    <!-- Main CV content -->
     <div class="cv-main" role="region" aria-label="Curriculum Vitae">
 
-      <!-- Education -->
       <section class="cv-section" aria-labelledby="cv-edu">
         <h2 id="cv-edu" class="cv-section-title"><span aria-hidden="true">🎓</span> Education</h2>
         <div class="cv-timeline">
@@ -319,7 +309,6 @@
         </div>
       </section>
 
-      <!-- Experience / Projects -->
       <section class="cv-section" aria-labelledby="cv-exp">
         <h2 id="cv-exp" class="cv-section-title"><span aria-hidden="true">💼</span> Projects &amp; Experience</h2>
         <div class="cv-timeline">
@@ -362,7 +351,6 @@
         </div>
       </section>
 
-      <!-- Skills -->
       <section class="cv-section" aria-labelledby="cv-skills">
         <h2 id="cv-skills" class="cv-section-title"><span aria-hidden="true">⚙️</span> Skills</h2>
         <div class="skills-grid" role="list">
@@ -377,7 +365,6 @@
         </div>
       </section>
 
-      <!-- Certifications / Activities -->
       <section class="cv-section" aria-labelledby="cv-cert">
         <h2 id="cv-cert" class="cv-section-title"><span aria-hidden="true">🏆</span> Activities</h2>
         <div class="cv-timeline">
@@ -402,7 +389,6 @@
         </div>
       </section>
 
-      <!-- Interests -->
       <section class="cv-section" aria-labelledby="cv-interests">
         <h2 id="cv-interests" class="cv-section-title"><span aria-hidden="true">✨</span> Interests</h2>
         <ul class="interests-list" aria-label="Personal interests">
@@ -417,8 +403,8 @@
         </ul>
       </section>
 
-    </div><!-- /cv-main -->
-  </div><!-- /cv-wrap -->
+    </div>
+  </div>
 
 </main>
 

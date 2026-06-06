@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* ───────── CSS Variables ───────── */
     :root {
       --cream:     #faf3e0;
       --white:     #ffffff;
@@ -33,12 +32,9 @@
       --transition: .25s cubic-bezier(.4,0,.2,1);
     }
 
-    /* ───────── Reset ───────── */
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html, body { height:100%; }
     img { display:block; max-width:100%; }
-
-    /* ───────── Base ───────── */
     body {
       font-family: var(--font-serif);
       background: var(--cream);
@@ -47,8 +43,6 @@
       display: flex;
       flex-direction: column;
     }
-
-    /* ───────── Skip link ───────── */
     .skip-link {
       position: absolute;
       top: -60px;
@@ -65,7 +59,6 @@
     }
     .skip-link:focus { top: 0; outline: 3px solid var(--tan); }
 
-    /* ───────── Header / Nav ───────── */
     header {
       background: var(--brown-mid);
       color: var(--white);
@@ -108,7 +101,6 @@
       border-radius: 2px;
     }
 
-    /* ───────── Main ───────── */
     main {
       flex: 1;
       padding: 2.5rem 1.5rem;
@@ -117,7 +109,6 @@
       width: 100%;
     }
 
-    /* ───────── Hero Banner ───────── */
     .hero {
       position: relative;
       background: var(--brown-mid);
@@ -219,7 +210,6 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ───────── Section headers ───────── */
     .section-header {
       display: flex;
       align-items: baseline;
@@ -238,7 +228,6 @@
       background: linear-gradient(to right, var(--tan-lite), transparent);
     }
 
-    /* ───────── Form card ───────── */
     .form-card {
       background: var(--white);
       border: 1px solid var(--tan-lite);
@@ -350,7 +339,6 @@
       flex-wrap: wrap;
     }
 
-    /* ───────── Buttons ───────── */
     .btn {
       font-family: var(--font-sans);
       font-weight: 600;
@@ -382,7 +370,6 @@
     }
     .btn-secondary:hover { background: var(--tan-lite); }
 
-    /* ───────── Success toast ───────── */
     .toast {
       display: none;
       align-items: center;
@@ -404,7 +391,6 @@
       to   { opacity:1; transform: translateY(0); }
     }
 
-    /* ───────── Table section ───────── */
     .table-section { margin-bottom: 3rem; }
 
     .table-wrapper {
@@ -482,7 +468,6 @@
       object-fit: cover;
       border-radius: 6px;
       border: 1px solid var(--tan-lite);
-      loading: lazy;
     }
     .thumb-placeholder {
       width: 56px;
@@ -530,7 +515,6 @@
       font-size: .95rem;
     }
 
-    /* ───────── Footer ───────── */
     footer {
       background: var(--brown-mid);
       color: #f5e6d3;
@@ -540,7 +524,6 @@
       font-size: .88rem;
     }
 
-    /* ───────── Responsive ───────── */
     @media (max-width: 700px) {
       .form-grid { grid-template-columns: 1fr; }
       .form-grid .full { grid-column: 1; }
@@ -579,7 +562,6 @@
 
 <main id="main-content">
 
-  <!-- ── Hero ── -->
   <section class="hero" aria-label="Profile overview">
     <div class="hero-avatar">
       <img src="serj.jpg" alt="Sergiu Bătrîn" width="120" height="120" loading="eager">
@@ -610,7 +592,6 @@
     </div>
   </section>
 
-  <!-- ── Form ── -->
   <section aria-labelledby="form-heading">
     <div class="section-header">
       <h2 id="form-heading">Add a Project</h2>
@@ -628,7 +609,6 @@
 
           <div class="form-grid">
 
-            <!-- Project name -->
             <div class="field">
               <label for="proj-name">Project Name <span class="req" aria-hidden="true">*</span></label>
               <input type="text" id="proj-name" name="proj-name"
@@ -639,7 +619,6 @@
               <span id="proj-name-error" class="field-error" role="alert" aria-live="polite"></span>
             </div>
 
-            <!-- Status -->
             <div class="field">
               <label for="proj-status">Status <span class="req" aria-hidden="true">*</span></label>
               <select id="proj-status" name="proj-status"
@@ -653,7 +632,6 @@
               <span id="proj-status-error" class="field-error" role="alert" aria-live="polite"></span>
             </div>
 
-            <!-- Description -->
             <div class="field full">
               <label for="proj-desc">Short Description <span class="req" aria-hidden="true">*</span></label>
               <textarea id="proj-desc" name="proj-desc"
@@ -666,7 +644,6 @@
               <span id="proj-desc-error" class="field-error" role="alert" aria-live="polite"></span>
             </div>
 
-            <!-- URL -->
             <div class="field">
               <label for="proj-url">GitHub / Live URL <span class="req" aria-hidden="true">*</span></label>
               <input type="url" id="proj-url" name="proj-url"
@@ -677,7 +654,6 @@
               <span id="proj-url-error" class="field-error" role="alert" aria-live="polite"></span>
             </div>
 
-            <!-- Completion date -->
             <div class="field">
               <label for="proj-date">Completion / Start Date <span class="req" aria-hidden="true">*</span></label>
               <input type="date" id="proj-date" name="proj-date"
@@ -686,7 +662,6 @@
               <span id="proj-date-error" class="field-error" role="alert" aria-live="polite"></span>
             </div>
 
-            <!-- Technologies -->
             <div class="field">
               <label for="proj-tech">Technologies Used <span class="req" aria-hidden="true">*</span></label>
               <input type="text" id="proj-tech" name="proj-tech"
@@ -698,7 +673,6 @@
               <span id="proj-tech-error" class="field-error" role="alert" aria-live="polite"></span>
             </div>
 
-            <!-- Thumbnail URL -->
             <div class="field">
               <label for="proj-img">Thumbnail Image URL</label>
               <input type="url" id="proj-img" name="proj-img"
@@ -708,7 +682,7 @@
               <span id="proj-img-error" class="field-error" role="alert" aria-live="polite"></span>
             </div>
 
-          </div><!-- /form-grid -->
+          </div>
         </fieldset>
 
         <div class="form-actions">
@@ -723,7 +697,6 @@
     </div>
   </section>
 
-  <!-- ── Table ── -->
   <section class="table-section" aria-labelledby="table-heading">
     <div class="section-header">
       <h2 id="table-heading">Projects</h2>
@@ -746,7 +719,6 @@
             </tr>
           </thead>
           <tbody id="projectsBody">
-            <!-- Populated by JS -->
           </tbody>
         </table>
       </div>
@@ -767,7 +739,6 @@
 (function () {
   'use strict';
 
-  /* ── Helpers ── */
   const $ = id => document.getElementById(id);
 
   function showError(inputId, msg) {
@@ -786,7 +757,6 @@
     inp.removeAttribute('aria-invalid');
   }
 
-  /* ── Validation rules ── */
   function validate() {
     let ok = true;
     const fields = ['proj-name','proj-status','proj-desc','proj-url','proj-date','proj-tech'];
@@ -823,14 +793,12 @@
     return ok;
   }
 
-  /* ── Live-validate on blur ── */
   ['proj-name','proj-status','proj-desc','proj-url','proj-date','proj-tech','proj-img'].forEach(id => {
     const el = $(id);
     if (el) el.addEventListener('blur', () => { if (el.getAttribute('aria-invalid')) validate(); });
     if (el) el.addEventListener('input', () => { if (el.getAttribute('aria-invalid')) clearError(id); });
   });
 
-  /* ── Status helpers ── */
   function statusLabel(val) {
     return { completed:'Completed', wip:'Work in Progress', planned:'Planned' }[val] || val;
   }
@@ -838,7 +806,6 @@
     return { completed:'status-completed', wip:'status-wip', planned:'status-planned' }[val] || '';
   }
 
-  /* ── Insert row ── */
   let rowCount = 0;
   function addRow(data) {
     rowCount++;
@@ -848,7 +815,6 @@
     const tr = document.createElement('tr');
     tr.style.animationDelay = '0ms';
 
-    /* Thumbnail cell */
     const tdThumb = document.createElement('td');
     if (data.img) {
       const im = document.createElement('img');
@@ -874,18 +840,15 @@
     }
     tr.appendChild(tdThumb);
 
-    /* Name */
     const tdName = document.createElement('td');
     tdName.textContent = data.name;
     tdName.style.fontWeight = '600';
     tr.appendChild(tdName);
 
-    /* Description */
     const tdDesc = document.createElement('td');
     tdDesc.textContent = data.desc;
     tr.appendChild(tdDesc);
 
-    /* Technologies */
     const tdTech = document.createElement('td');
     data.tech.split(',').map(t => t.trim()).filter(Boolean).forEach(t => {
       const span = document.createElement('span');
@@ -895,12 +858,10 @@
     });
     tr.appendChild(tdTech);
 
-    /* Date */
     const tdDate = document.createElement('td');
     tdDate.textContent = new Date(data.date + 'T00:00:00').toLocaleDateString('en-GB', { year:'numeric', month:'short', day:'numeric' });
     tr.appendChild(tdDate);
 
-    /* Status */
     const tdStatus = document.createElement('td');
     const badge = document.createElement('span');
     badge.className = `status-badge ${statusClass(data.status)}`;
@@ -908,7 +869,6 @@
     tdStatus.appendChild(badge);
     tr.appendChild(tdStatus);
 
-    /* URL */
     const tdUrl = document.createElement('td');
     const a = document.createElement('a');
     a.href = data.url;
@@ -920,15 +880,12 @@
 
     tbody.prepend(tr);
 
-    /* Update counter */
     $('stat-projects').textContent = rowCount;
   }
 
-  /* ── Form submit ── */
   $('projectForm').addEventListener('submit', function (e) {
     e.preventDefault();
     if (!validate()) {
-      /* Focus first invalid field */
       const first = this.querySelector('[aria-invalid="true"]');
       if (first) first.focus();
       return;
@@ -944,20 +901,17 @@
       img:    $('proj-img').value.trim(),
     });
 
-    /* Show success toast */
     const toast = $('form-success');
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 3500);
 
     this.reset();
 
-    /* Scroll to table */
     setTimeout(() => {
       document.querySelector('.table-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 200);
   });
 
-  /* ── Reset clears errors ── */
   $('projectForm').addEventListener('reset', function () {
     ['proj-name','proj-status','proj-desc','proj-url','proj-date','proj-tech','proj-img'].forEach(clearError);
   });
